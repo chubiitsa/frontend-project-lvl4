@@ -20,14 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4d4b70-bbf1-4af0-be24-2c1ca82e25fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Chat.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/init.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <workItem from="1649166162183" duration="251000" />
       <workItem from="1649166423434" duration="234000" />
       <workItem from="1649166748630" duration="193000" />
-      <workItem from="1649167188485" duration="26086000" />
+      <workItem from="1649167188485" duration="36237000" />
     </task>
     <servers />
   </component>

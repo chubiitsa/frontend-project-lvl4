@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,42 +6,59 @@ import {
   Redirect,
   useLocation,
 } from 'react-router-dom';
-
+import AuthContext from './contexts/index.jsx';
+import useAuth from './hooks/index.jsx';
 import LoginPage from './Login.jsx';
 import Chat from './Chat.jsx';
 
-export default function App() {
+function AuthProvider({ children }) {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const logIn = () => setLoggedIn(true);
+  const logOut = () => {
+    localStorage.removeItem('userId');
+    setLoggedIn(false);
+  };
+
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <PrivateRoute exact path="/">
-            <Chat />
-          </PrivateRoute>
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <AuthContext.Provider value={{ loggedIn, logIn, logOut }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 
-function PrivateRoute() {
+function RequireAuth({ children }) {
+  const auth = useAuth();
+  const location = useLocation();
+
+  if (!auth.loggedIn) {
+    return <Redirect to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
+}
+
+export default function App() {
   return (
-    <Route
-      render={({ location }) => (
-        <Redirect
-          to={{
-            pathname: '/login',
-            state: { from: location },
-          }}
-        />
-      )}
-    />
+    <AuthProvider>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/">
+              <RequireAuth>
+                <Chat />
+              </RequireAuth>
+            </Route>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
