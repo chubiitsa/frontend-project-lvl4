@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import {
-  Button, Form, Card, Container,
+  Button, Form, Card, Container, Row,
 } from 'react-bootstrap';
 import { useLocation, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
@@ -44,52 +44,55 @@ function SignInForm() {
       }
     },
   });
+
   return (
-    <Container fluid>
-      <Card>
-        <Card.Body className="text-center">
-          <Card.Title className="mb-4">Войти в чат</Card.Title>
-          <Form onSubmit={formik.handleSubmit}>
-            <Form.Group className="mb-3">
-              <Form.Label className="form-label" htmlFor="username">
-                Ваш ник
-                <Form.Control
-                  ref={inputRef}
-                  onChange={formik.handleChange}
-                  value={formik.values.username}
-                  isInvalid={formik.errors.username && formik.touched.username}
-                  id="username"
-                  type="text"
-                  name="username"
-                  autoComplete="username"
-                  required
-                />
-                <Form.Control.Feedback type="invalid">{formik.errors.username}</Form.Control.Feedback>
-              </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-4">
-              <Form.Label className="form-label" htmlFor="password">
-                Пароль
-                <Form.Control
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                  isInvalid={formik.errors.password && formik.touched.password}
-                  type="password"
-                  name="password"
-                  autoComplete="current-password"
-                  id="password"
-                  required
-                />
-                <Form.Control.Feedback type="invalid">{formik.errors.password}</Form.Control.Feedback>
-              </Form.Label>
-            </Form.Group>
-            {authFailed && (
-              <div className="invalid-feedback d-block">the username or password is incorrect</div>
-            )}
-            <Button type="submit" variant="outline-primary">Submit</Button>
-          </Form>
-        </Card.Body>
-      </Card>
+    <Container>
+      <Row className="justify-content-md-center">
+        <Card>
+          <Card.Body className="text-center">
+            <Card.Title className="mb-4">Войти в чат</Card.Title>
+            <Form onSubmit={formik.handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label className="form-label" htmlFor="username">
+                  Ваш ник
+                  <Form.Control
+                    ref={inputRef}
+                    onChange={formik.handleChange}
+                    value={formik.values.username}
+                    isInvalid={formik.errors.username && formik.touched.username}
+                    id="username"
+                    type="text"
+                    name="username"
+                    autoComplete="username"
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">{formik.errors.username}</Form.Control.Feedback>
+                </Form.Label>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="form-label" htmlFor="password">
+                  Пароль
+                  <Form.Control
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                    isInvalid={formik.errors.password && formik.touched.password}
+                    type="password"
+                    name="password"
+                    autoComplete="current-password"
+                    id="password"
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">{formik.errors.password}</Form.Control.Feedback>
+                </Form.Label>
+              </Form.Group>
+              {authFailed && (
+                <div className="invalid-feedback d-block">the username or password is incorrect</div>
+              )}
+              <Button type="submit" variant="outline-primary">Войти</Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Row>
     </Container>
   );
 }
