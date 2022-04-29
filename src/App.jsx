@@ -7,8 +7,8 @@ import {
   useLocation,
 } from 'react-router-dom';
 import AuthContext from './contexts/index.jsx';
-import useAuth from './hooks/index.jsx';
 import LoginPage from './Login.jsx';
+import useAuth from './hooks/index.jsx';
 import Chat from './Chat.jsx';
 
 function AuthProvider({ children }) {
@@ -42,21 +42,19 @@ export default function App() {
   return (
     <AuthProvider>
       <Router>
-        <div>
-          <Switch>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-            <Route exact path="/">
-              <RequireAuth>
-                <Chat />
-              </RequireAuth>
-            </Route>
-            <Route path="*">
-              <NoMatch />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route exact path="/">
+            <RequireAuth>
+              <Chat />
+            </RequireAuth>
+          </Route>
+          <Route path="*">
+            <NoMatch />
+          </Route>
+        </Switch>
       </Router>
     </AuthProvider>
   );

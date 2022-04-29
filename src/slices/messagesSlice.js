@@ -7,7 +7,13 @@ export const messagesSlice = createSlice({
   },
   reducers: {
     load: (state, action) => {
-      state.entities = [...state.entities, ...action.payload];
+      if (state.entities.length === action.payload.length) {
+        return;
+      }
+      state.entities = [...action.payload];
+    },
+    add: (state, action) => {
+      state.entities = [...state.entities, action.payload];
     },
   },
 });

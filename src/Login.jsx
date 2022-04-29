@@ -7,6 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import useAuth from './hooks/index.jsx';
+import AuthStatus from './AuthStatus.jsx';
 
 const validationSchema = yup.object().shape({
   username: yup.string().required(),
@@ -97,13 +98,15 @@ function SignInForm() {
   );
 }
 
-export default function LoginPage() {
+function LoginPage() {
   return (
-    <div>
-      <p>You must log in to chat</p>
+    <div className="d-flex flex-column h-100">
+      <AuthStatus />
       <div>
         <SignInForm />
       </div>
     </div>
   );
 }
+
+export default LoginPage;

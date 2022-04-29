@@ -19,6 +19,7 @@ const buildState = (defaultState) => {
     currentChannelId: generalChannelId,
     users: [
       { id: 1, username: 'admin', password: 'admin' },
+      { id: 2, username: 'anna', password: 'anna' },
     ],
   };
 
@@ -56,6 +57,7 @@ export default (app, defaultState = {}) => {
 
     socket.on('newChannel', (channel, acknowledge = _.noop) => {
       const channelWithId = {
+        ...channel,
         ...channel,
         removable: true,
         id: getNextId(),
