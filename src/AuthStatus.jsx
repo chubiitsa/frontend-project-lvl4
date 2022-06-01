@@ -12,7 +12,7 @@ export default function AuthStatus() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         <Container>
-          <div className="p-2">You are not logged in.</div>
+          <div className="pb-2">You are not logged in.</div>
         </Container>
       </nav>
     );
@@ -21,13 +21,12 @@ export default function AuthStatus() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <Container>
-        <div className="p-2">
-          Welcome,{" "}
-          {userId.username}
+        <div>
+          Welcome,
+          {`  ${userId.username}`}
           !
         </div>
         <Button
-          className="m-2"
           onClick={() => {
             auth.logOut(() => navigate('/'));
           }}

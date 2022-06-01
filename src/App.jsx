@@ -6,22 +6,32 @@ import {
   Redirect,
   useLocation,
 } from 'react-router-dom';
+import { io } from 'socket.io-client';
 import AuthContext from './contexts/index.jsx';
-import LoginPage from './Login.jsx';
 import useAuth from './hooks/index.jsx';
+import LoginPage from './Login.jsx';
 import Chat from './Chat.jsx';
+import AuthStatus from './AuthStatus.jsx';
 
 function AuthProvider({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
+  const socket = io();
 
-  const logIn = () => setLoggedIn(true);
+  const logIn = () => {
+    setLoggedIn(true);
+    socket.connect();
+  };
   const logOut = () => {
     localStorage.removeItem('userId');
     setLoggedIn(false);
+    socket.disconnect();
   };
 
   return (
-    <AuthContext.Provider value={{ loggedIn, logIn, logOut }}>
+    <AuthContext.Provider value={{
+      loggedIn, logIn, logOut, socket,
+    }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -41,21 +51,24 @@ function RequireAuth({ children }) {
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Switch>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route exact path="/">
-            <RequireAuth>
-              <Chat />
-            </RequireAuth>
-          </Route>
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-      </Router>
+      <div className="d-flex flex-column h-100">
+        <AuthStatus />
+        <Router>
+          <Switch>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/">
+              <RequireAuth>
+                <Chat />
+              </RequireAuth>
+            </Route>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
     </AuthProvider>
   );
 }

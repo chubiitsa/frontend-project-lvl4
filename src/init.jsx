@@ -9,7 +9,7 @@ const init = () => {
     document.getElementById('chat'),
   );
   root.render(
-    <Provider store={store}>
+    <Provider store={store} id="provider">
       <App />
     </Provider>,
   );

@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4d4b70-bbf1-4af0-be24-2c1ca82e25fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/modals/Add.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modals/Remove.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modals/Rename.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modals/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modals/validationSchema.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AuthStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuthStatus.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Chat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chat.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slices/channelsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/slices/channelsSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slices/messagesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/slices/messagesSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +58,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/slices" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -72,7 +88,8 @@
       <workItem from="1649166162183" duration="251000" />
       <workItem from="1649166423434" duration="234000" />
       <workItem from="1649166748630" duration="193000" />
-      <workItem from="1649167188485" duration="82594000" />
+      <workItem from="1649167188485" duration="100069000" />
+      <workItem from="1652722382789" duration="34658000" />
     </task>
     <servers />
   </component>
@@ -92,25 +109,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="487" key="GridCell.Tab.0.bottom" timestamp="1651661122883">
+    <state x="354" y="135" key="#Inspections" timestamp="1653563431141">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="487" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1651661122883" />
+    <state x="354" y="135" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1653563431141" />
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1652722396678">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1652722396678" />
+    <state width="1398" height="487" key="GridCell.Tab.0.bottom" timestamp="1652722347250">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="487" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1652722347250" />
     <state width="1398" height="318" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1649244089898" />
-    <state width="1398" height="487" key="GridCell.Tab.0.center" timestamp="1651661122882">
+    <state width="1398" height="487" key="GridCell.Tab.0.center" timestamp="1652722347248">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="487" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1651661122882" />
+    <state width="1398" height="487" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1652722347248" />
     <state width="1398" height="318" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1649244089897" />
-    <state width="1398" height="487" key="GridCell.Tab.0.left" timestamp="1651661122881">
+    <state width="1398" height="487" key="GridCell.Tab.0.left" timestamp="1652722347244">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="487" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1651661122881" />
+    <state width="1398" height="487" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1652722347244" />
     <state width="1398" height="318" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1649244089896" />
-    <state width="1398" height="487" key="GridCell.Tab.0.right" timestamp="1651661122883">
+    <state width="1398" height="487" key="GridCell.Tab.0.right" timestamp="1652722347249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="487" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1651661122883" />
+    <state width="1398" height="487" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1652722347249" />
     <state width="1398" height="318" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1649244089897" />
     <state x="385" y="191" key="run.anything.popup" timestamp="1649411899055">
       <screen x="0" y="23" width="1440" height="797" />
